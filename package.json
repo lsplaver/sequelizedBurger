@@ -1,0 +1,25 @@
+{
+  "author": "Lawrence Splaver",
+  "bugs": {
+    "url": "https://github.com/lsplaver/sequelizedBurger/issues"
+  },
+  "dependencies": {
+  },
+  "description": "Eat-Da-Burger - Sequelized! is a restaurant app utilizing Sequelize that lets users input the names of burgers they'd like to eat.",
+  "engines": {
+    "npm": "5.7.1"
+  },
+  "homepage": "https://github.com/lsplaver/sequelizedBurger#readme",
+  "license": "MIT",
+  "main": "server.js",
+  "name": "burger",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lsplaver/sequelizedBurger.git"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.0"
+}
