@@ -1,30 +1,53 @@
-var express = require("express");
-var router = express.Router();
-var burger = require("../models/burger.js");
-router.get("/", function (req, res) {
-    burger.selectAll(function(data) {
-        var burgerOutputObject = {
-            burgers: data
-        };
-        res.render("index", burgerOutputObject);
+var db = require("../models");
+module.exports = function (app) {
+    app.get("/", function (req, res) {
+        db.Burgers.findAll({}).then(function (data) {
+            var burgerOutputObject = {
+                burgers: data
+            };
+            res.render("index", burgerOutputObject);
+        }).catch((err) => {
+            res.status(500).json({
+                error: err.message
+            });
+        });
     });
-});
 
-router.post("/api/burgers", function (req, res) {
-    burger.insertOne("burgers", "burger_name", "devoured", req.body.burger_name, false, function (result) {
-        res.json({ id: result.insertId });
+    app.post("/api/burgers", function (req, res) {
+        db.Burgers.create({
+            burger_name: req.body.burger_name
+        }).then(burger => {
+            console.log(burger.get({
+                plain: true
+            }));
+            res.render("index", burger.get());
+        }).catch((err) => {
+            res.status(500).json({
+                error: err.message
+            });
+        });
     });
-});
 
-router.put("/api/burgers/:id", function (req, res) {
-    burger.updateOne("burgers", "devoured", req.body.devoured, "id", req.params.id, function (result) {
-        if (result.changedRows == 0) {
-            return res.status(404).end();
-        }
-        else {
-            return res.status(200).end();
-        }
+    app.put("/api/burgers/:id", function (req, res) {
+        db.Burgers.update({
+            devoured: req.body.devoured
+        },
+            {
+                where: {
+                    id: req.params.id
+                }
+            }).then(function (data) {
+                var burgerOutputObject = {
+                    burgers: data
+                };
+                    console.log(burgerOutputObject);
+                res.render("index", burgerOutputObject);
+            }).catch((err) => {
+                res.status(500).json({
+                    error: err.message
+                });
+                console.log(err);
+            });
+
     });
-});
-
-module.exports = router;
+};

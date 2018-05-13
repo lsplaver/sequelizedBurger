@@ -1,2 +1,2 @@
 # burger
-Eat-Da-Burger! is a restaurant app that lets users input the names of burgers they'd like to eat.
+Eat-Da-Burger - Sequelized! is a restaurant app utilizing Sequelize that lets users input the names of burgers they'd like to eat.
