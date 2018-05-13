@@ -2,7 +2,7 @@ var fs = require("fs");
 module.exports = {
   "development": {
     "username": "root",
-    "password": "Gy?XPdLr]UrjyHn]4,JV",
+    "password": "",
     "database": "burgers_sequelized_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
