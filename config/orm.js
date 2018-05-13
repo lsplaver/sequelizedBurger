@@ -20,7 +20,7 @@ var orm = {
         });
     },
     updateOne: function (tableUpdate, colUpdate, valUpdate, colWhere, valWhere, cb) {
-        var queryString = "UPDATE burgers SET devoured = true WHERE id = ?";
+        var queryString = "UPDATE Burgers SET devoured = true WHERE id = ?";
         connection.query(queryString, valWhere, function (err, result) {
             if (err) {
                 throw err;
@@ -29,4 +29,4 @@ var orm = {
         });
     }
 };
-module.exports = orm;
+// module.exports = orm;

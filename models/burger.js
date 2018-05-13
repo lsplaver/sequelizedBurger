@@ -1,22 +1,25 @@
-var orm = require("../config/orm.js");
-var burger = {
-    selectAll: function (cb) {
-        orm.selectAll("burgers", function (res) {
-            cb(res);
-        });
+'use strict';
+// sequelize.sync();
+module.exports = (sequelize, DataTypes) => {
+  var Burgers = sequelize.define('Burgers', {
+    burger_name: DataTypes.STRING,
+    devoured: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false
     },
-    insertOne: function (tableInsert, burgerName, burgerEaten, nameVal, eatenVal, cb) {
-        var col = {burgerNameCol: burgerName, burgerEatenCol: burgerEaten};
-        var val = {burgerNameVal: nameVal, burgerEatenVal: eatenVal};
-        orm.insertOne(tableInsert, col.burgerNameCol, col.burgerEatenCol, val.burgerNameVal, val.burgerEatenVal, function (res) {
-            cb(res);
-        });
+    createdAt: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.DATE.NOW,
+      allowNull: false
     },
-    updateOne: function (tableUpdate, burgerEaten, eatenVal, burgerId, id, cb) {
-        orm.updateOne(tableUpdate, burgerEaten, eatenVal, burgerId, id, function (res) {
-            cb(res);
-        });
+    updatedAt: {
+      type: Sequelize.DATE,
+      defaultValue: Sequelize.DATE.NOW,
+      allowNull: false
     }
+  }, {});
+  Burgers.associate = function (models) {
+    // associations can be defined here
+  };
+  return Burgers;
 };
-
-module.exports = burger;
