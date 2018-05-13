@@ -15,7 +15,7 @@ module.exports = {
     return queryInterface.bulkInsert('Burgers', [{
       burger_name: 'Mega Burger',
       devoured: false,
-      createdAt: new Date(),
+      createdAt: Sequelize.DATE, // new Date(),
       updatedAt: new Date()
     },
     {

@@ -1,5 +1,5 @@
 'use strict';
-// sequelize.sync();
+
 module.exports = (sequelize, DataTypes) => {
   var Burgers = sequelize.define('Burgers', {
     burger_name: DataTypes.STRING,
@@ -8,13 +8,13 @@ module.exports = (sequelize, DataTypes) => {
       defaultValue: false
     },
     createdAt: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.DATE.NOW,
+      type: DataTypes.DATE,
+      defaultValue: sequelize.NOW,
       allowNull: false
     },
     updatedAt: {
-      type: Sequelize.DATE,
-      defaultValue: Sequelize.DATE.NOW,
+      type: DataTypes.DATE,
+      defaultValue: sequelize.NOW,
       allowNull: false
     }
   }, {});
