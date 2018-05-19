@@ -12,6 +12,6 @@ app.set("view engine", "handlebars");
 require("./controllers/burger_controller.js")(app);
 db.sequelize.sync().then(function () {
     app.listen(PORT, function () {
-        console.log("Currently listening at https://eat-da-burger-sequelize-lawrence.herokuapp.com " + PORT);
+        console.log("Currently listening at https://eat-da-burger-sqlize-lawrence.herokuapp.com " + PORT);
     });
 });
