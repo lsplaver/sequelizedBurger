@@ -1,9 +1,9 @@
 var fs = require("fs");
 module.exports = {
   "development": {
-    "username": "root",
+    "username": "node-quiz-app-dev",
     "password": null,
-    "database": "burgers_sequelized_db",
+    "database": "node_quiz_app_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
@@ -16,10 +16,6 @@ module.exports = {
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    // "username": process.env.DB_USERNAME,
-    // "password": process.env.DB_PASSWORD,
-    // "database": process.env.DB_NAME,
-    // "host": process.env.DB_HOSTNAME,
     "dialect": "mysql"
   }
 }
