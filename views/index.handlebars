@@ -7,8 +7,8 @@
                 {{#each burgers}} {{#unless devoured}}
                 <li>
                     <!-- {{ id }} {{ burger_name }} {{ devoured }} -->
-                    {{@index.id}} {{@index.burger_name}} {{@index.devoured}}
-                    <button class="isEaten" data-id="{{@index.id}}" data-waseaten="true">Devour It!</button>
+                    {{burgers.id}} {{burgers.burger_name}} {{burgers.devoured}}
+                    <button class="isEaten" data-id="{{burgers.id}}" data-waseaten="true">Devour It!</button>
                 </li>
                 {{/unless}} {{/each}}
             </ul>
