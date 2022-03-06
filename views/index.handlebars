@@ -6,7 +6,8 @@
                 <label>Uneaten Burgers</label>
                 {{#each burgers}} {{#unless devoured}}
                 <li>
-                    {{ id }} {{ burger_name }} {{ devoured }}
+                    <!-- {{ id }} {{ burger_name }} {{ devoured }} -->
+                    {{this}}
                     <button class="isEaten" data-id="{{id}}" data-waseaten="true">Devour It!</button>
                 </li>
                 {{/unless}} {{/each}}
