@@ -1,7 +1,7 @@
 var db = require("../models/index.cjs");
 module.exports = function (app) {
     app.get("/", function (req, res) {
-        db.Burgers.findAll({}).then(function (data) {
+        db.Burgers.findAll({}).then(function (data, rows) {
             var burgerOutputObject = {
                 burgers: data
             };
