@@ -5,7 +5,7 @@ module.exports = function (app) {
             var burgerOutputObject = {
                 burgers: data
             };
-            res.render("index.hbs", burgerOutputObject);
+            res.render("index", burgerOutputObject);
         }).catch((err) => {
             res.status(500).json({
                 error: err.message
@@ -20,7 +20,7 @@ module.exports = function (app) {
             console.log(burger.get({
                 plain: true
             }));
-            res.render("index.hbs", burger.get());
+            res.render("index", burger.get());
         }).catch((err) => {
             res.status(500).json({
                 error: err.message
@@ -41,7 +41,7 @@ module.exports = function (app) {
                     burgers: data
                 };
                 console.log(burgerOutputObject);
-                res.render("index.hbs", burgerOutputObject);
+                res.render("index", burgerOutputObject);
             }).catch((err) => {
                 res.status(500).json({
                     error: err.message
