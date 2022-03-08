@@ -17,13 +17,13 @@
             "url": "http://localhost:8080",
             //"url": "http://localhost/dashboard/",
             "webRoot": "${workspaceFolder}"
-        },
-        {
+        }
+        /* {
             "type": "pwa-chrome",
             "request": "launch",
             "name": "Launch Chrome against 127.0.0.1:3306",
             "url": "http://127.0.0.1:3306",
             "webRoot": "${workspaceFolder}"
-        }
+        } */
     ]
 }
