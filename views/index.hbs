@@ -4,11 +4,11 @@
         <div class="uneaten">
             <ul>
                 <label>Uneaten Burgers</label>
-                {{#each burgers}} {{#unless this.data.devoured}}
+                {{#each burgers}} {{#unless this.devoured}}
                 <li>
-                <li>
+                    <!-- <li> -->
                     ID: {{ id }} BurgerName: {{ burger_name }} Devoured: {{ devoured }}
-                </li>
+                    <!-- </li>
                 <li>
                     ID: {{ this.id }} BurgerName: {{ this.burger_name }} Devoured: {{ this.devoured }}
                 </li>
@@ -18,8 +18,8 @@
                 <li>
                     ID: {{ this.burger.id }} BurgerName: {{ this.burger.burger_Name }} Devoured: {{ this.burger.devoured
                     }}
-                </li>
-                <button class="isEaten" data-id="{{this.data.id}}" data-waseaten="true">Devour It!</button>
+                </li> -->
+                    <button class="isEaten" data-id="{{this.id}}" data-waseaten="true">Devour It!</button>
                 </li>
                 {{/unless}} {{/each}}
             </ul>
