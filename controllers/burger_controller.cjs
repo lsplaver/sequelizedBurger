@@ -5,7 +5,8 @@ module.exports = function (app) {
             /* var burgerOutputObject = {
                 burgers: data
             }; */
-            res.render("index", { burgers: data.id, burgers: data.burger_name, burgers: data.devoured }); // burgerOutputObject);
+            var burgers = { burgers: data };
+            res.render("index", { burgers }); // burgerOutputObject);
         }).catch((err) => {
             res.status(500).json({
                 error: err.message
