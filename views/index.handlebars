@@ -4,7 +4,7 @@
         <div class="uneaten">
             <ul>
                 <label>Uneaten Burgers</label>
-                {{#each Burgers}} {{#unless devoured}}
+                {{#each burgers}} {{#unless this.devoured}}
                 <!-- || devoured || this.burger.devoured || this.data.devoured}} -->
                 <li>
                     This: {{ this }}
