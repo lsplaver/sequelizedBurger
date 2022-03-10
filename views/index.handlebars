@@ -7,14 +7,28 @@
                 {{#each burgers}} {{#unless this.devoured}}
                 <!-- || devoured || this.burger.devoured || this.data.devoured}} -->
                 <li>
+                <li>
                     This: {{ this }}
+                </li>
+                <li>
                     ID: {{ id }} BurgerName: {{ burger_name }} Devoured: {{ devoured }}
+                </li>
+                <li>
                     ID: {{ this.id }} BurgerName: {{ this.burger_name }} Devoured: {{ this.devoured }}
+                </li>
+                <li>
                     ID: {{ this.data.id }} BurgerName: {{ this.data.burger_name }} Devoured: {{ this.data.devoured }}
+                </li>
+                <li>
                     ID: {{ this.burger.id }} BurgerName: {{ this.burger.burger_name }} Devoured: {{ this.burger.devoured
                     }}
+                </li>
+                <li>
                     ID: {{ data.id }} BurgerName: {{ data.burger_name }} Devoured: {{ data.devoured }}
+                </li>
+                <li>
                     <button class="isEaten" data-id="{{data.id}}" data-waseaten="true">Devour It!</button>
+                </li>
                 </li>
                 {{/unless}} {{/each}}
             </ul>
